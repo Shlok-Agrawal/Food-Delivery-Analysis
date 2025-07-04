@@ -3,19 +3,19 @@
 This repository contains SQL queries for analyzing a food delivery platform's orders database. The queries are written in **MySQL** and focus on **customer behavior**, **restaurant performance**, and **promotion effectiveness** — all derived using modern SQL techniques like **CTEs**, **window functions**, and **date operations**.
 
 ---
+## 📁 Dataset Schema
 
-## 📁 Dataset Assumption
+All queries are based on a single table named `orders`, structured as follows:
 
-All queries use a single table named `orders` with the following assumed structure:
-
-| Column Name        | Data Type     | Description                           |
-|--------------------|---------------|---------------------------------------|
-| `order_id`         | INT           | Unique order ID                       |
-| `customer_code`    | VARCHAR       | Unique ID for each customer           |
-| `restaurant_id`    | VARCHAR       | Unique ID for each restaurant         |
-| `placed_at`        | DATETIME      | Timestamp of when the order was placed |
-| `cuisine`          | VARCHAR       | Cuisine type of the restaurant        |
-| `promo_code_name`  | VARCHAR       | Name of the promo code used (NULL if none) |
+| Column Name       | Data Type     | Description                                               |
+|-------------------|---------------|-----------------------------------------------------------|
+| `order_id`        | `VARCHAR(20)` | Unique identifier for each order                          |
+| `customer_code`   | `VARCHAR(20)` | Unique ID for each customer                               |
+| `placed_at`       | `DATETIME`    | Timestamp of when the order was placed                    |
+| `restaurant_id`   | `VARCHAR(10)` | ID of the restaurant that fulfilled the order             |
+| `cuisine`         | `VARCHAR(20)` | Type of cuisine offered by the restaurant                 |
+| `order_status`    | `VARCHAR(20)` | Status of the order (e.g., Completed, Cancelled, Failed) |
+| `promo_code_name` | `VARCHAR(20)` | Name of the promo code used (NULL if none was used)       |
 
 ---
 
@@ -51,26 +51,3 @@ Tracks users who were acquired in the past month using a promo code but haven’
 - ✅ Date Manipulation with `CURDATE()`, `DATE_SUB()`, etc.
 - ✅ Conditional Aggregation
 - ✅ Clean, readable SQL formatting
-
----
-
-## 📦 Usage
-
-You can directly copy and run these queries in your MySQL environment, provided your schema matches the structure mentioned above. These queries are modular and can be easily adapted for PostgreSQL or BigQuery with minor changes.
-
----
-
-## 💡 Ideal For
-
-- 📄 Resume Projects & Portfolios
-- 🎓 Academic Case Studies
-- 💼 SQL Interview Prep
-- 📊 Business/Data Analyst Capstone Projects
-
----
-
-## 🔗 Connect
-
-Made with ❤️ by [Your Name]  
-Feel free to reach out on [LinkedIn](https://www.linkedin.com/) or raise an issue for suggestions/improvements.
-
