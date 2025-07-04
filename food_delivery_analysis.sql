@@ -1,14 +1,3 @@
--- 🔸 Create the 'orders' table to store customer order details
-CREATE TABLE orders (
-    order_id VARCHAR(20),             -- Unique identifier for each order
-    customer_code VARCHAR(20),        -- Unique customer ID
-    placed_at DATETIME,               -- Date and time when the order was placed
-    restaurant_id VARCHAR(10),        -- ID of the restaurant fulfilling the order
-    cuisine VARCHAR(20),              -- Cuisine type of the restaurant
-    order_status VARCHAR(20),         -- Status of the order (e.g., Completed, Cancelled)
-    promo_code_name VARCHAR(20)       -- Name of the promo code applied (if any)
-);
-
 -- 🔹 Top 3 restaurants by cuisine based on number of orders
 WITH CuisineOrderCount AS (
     SELECT 
